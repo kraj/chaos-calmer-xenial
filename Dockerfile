@@ -33,6 +33,7 @@ RUN apt-get update && \
 	locales \
 	libacl1-dev \
 	libtool \
+	curl \
 	gawk \
 	wget \
 	gnutls-dev \
