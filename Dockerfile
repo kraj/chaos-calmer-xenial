@@ -34,6 +34,7 @@ RUN apt-get update && \
 	libacl1-dev \
 	libtool \
 	gawk \
+	wget \
 	gnutls-dev \
 	libcurl4-openssl-dev \
 	libjson-c-dev \
