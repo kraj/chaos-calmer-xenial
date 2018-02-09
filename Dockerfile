@@ -30,6 +30,7 @@ RUN apt-get update && \
 	autoconf \
 	bison \
 	flex \
+	locales \
 	libacl1-dev \
 	libtool \
 	gawk \
