@@ -39,6 +39,7 @@ RUN apt-get update && \
 	gnutls-dev \
 	libcurl4-openssl-dev \
 	libjson-c-dev \
+	patchutils \
 	sharutils \
 	tcsh \
 	git vim \
