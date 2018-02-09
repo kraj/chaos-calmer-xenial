@@ -5,7 +5,7 @@ MAINTAINER Khem Raj <raj.khem@gmail.com>
 
 # Install.
 RUN apt-get update && \
-	apt-get install -yq sudo build-essential \
+    apt-get install -yq sudo build-essential \
 	gradle \
 	mtd-utils \
 	python-jenkins \
@@ -55,11 +55,22 @@ RUN apt-get update && \
 	echo "dash dash/sh boolean false" | debconf-set-selections && \
 	DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
 
+# clean up
+RUN apt-get -y clean
+
+# Install Google's "repo" tool and make it executable
+RUN curl http://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
+RUN chmod +x /usr/local/bin/repo
+
 RUN useradd -ms /bin/bash -p build build && \
 	usermod -aG sudo build
+# give users in the sudo group sudo access in the container
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     locale-gen
+
+COPY ./bashrc /home/build/.bashrc
 
 # Set environment variables.
 ENV LANG en_US.utf8
