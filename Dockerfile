@@ -39,7 +39,7 @@ RUN apt-get update && \
 	libjson-c-dev \
 	sharutils \
 	tcsh \
-	git \
+	git vim \
 	u-boot-tools \
 	device-tree-compiler \
 	libmosquitto1 \
