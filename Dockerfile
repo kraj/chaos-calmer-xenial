@@ -76,8 +76,8 @@ COPY ./bashrc /home/build/.bashrc
 
 # Set environment variables.
 ENV LANG en_US.utf8
-ENV TIGRESS_HOME $HOME/tigress-2.2
-ENV PATH $HOME/tigress-2.2:$PATH
+ENV TIGRESS_HOME /home/build/tigress-2.2
+ENV PATH /home/build/tigress-2.2:$PATH
 
 USER build
 
