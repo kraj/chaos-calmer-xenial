@@ -81,11 +81,11 @@ ENV PATH $HOME/tigress-2.2:$PATH
 
 USER build
 
-RUN curl -O https://uclibc.org/~kraj/tigress-Linux-x86_64-2.2.zip && \
-    unzip tigress-Linux-x86_64-2.2.zip -d /home/build
-
 # Define working directory.
 WORKDIR /home/build
+
+RUN  curl -O https://uclibc.org/~kraj/tigress-Linux-x86_64-2.2.zip && \
+    unzip tigress-Linux-x86_64-2.2.zip -d /home/build
 
 # Define default command.
 CMD ["bash"]
